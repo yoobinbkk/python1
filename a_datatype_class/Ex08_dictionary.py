@@ -13,26 +13,43 @@
 
 print('--------- 1. 딕셔너리 요소 --------------- ')
 dt = {1:'one', 2:'two', '3':'three'}
+print(dt)
 
+print(dt[1])
+print(dt['3'])      # key가 자료형도 고려한다
 
 
 # 키는 숫자와 문자 그리고 튜플이여야 한다. 즉 리스트는 안된다.
 # 리스트의  값이 변경 가능하다. 그러나 키값을 변경하면 안되므로 리스트는 안된다
-dt2 = {1:'one', 2:'two', (3,4):'turple'}
+dt2 = {1:'one', 2:'two', (3,4):'tuple'}
+print(dt2[2])
+
+# print(dt2[3])     # 오류 : (3,4)이어야 함
+print(dt2[(3, 4)])
+
+# 'tuple' -> 'python'
+dt2[(3,4)] = 'python'
+print(dt2)
 
 
 print('--------- 2. 딕셔너리 추가 및 수정  --------------- ')
 # 딕셔너리에 값 추가 및 수정
+dt2['korea'] = 'seoul'      # append X, add X
+print(dt2)
 
+# 'seoul' -> '한국'
+dt2['korea'] = '한국'
+print(dt2)
 
 # 여러개 추가할 때
-
+dt2.update({5:'five', 6:'six'})
+print(dt2)
 
 print('--------- 3. Key로 Value값 찾기  --------------- ')
-
-
-
-
+print(dt2.keys())
+print(dt2.values())
+print(dt2.items())
+print(type(dt2.items()))
 
 
 # Key와 Value만 따로 검색
