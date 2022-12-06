@@ -35,9 +35,35 @@ i9={}
 i10=None
 
 
+a = -1
 
+if a:
+    print('True')
+else:
+    print('False')
 
+b = 0
+z = 2
 
+if a and b:
+    print('True2')  # True, b=0이면 False
 
+if a or b:
+    print('True3')  # True
 
+print(a and b)      # and는 둘 다 확인하고 뒷자리의 값을 출력한다. 만약 이중에 0이 있다면 0을 출력한다.
+print(b or z)       # or는 첫 값이 True면 그 값을 출력한다. 만약 첫 값이 False고 두번 째 값이 True면 True인 값을 출력한다. 만약 둘 다 False면 0을 출력한다.
 
+# print(b or c or a)
+
+if a:
+    c = 2
+elif b:
+    c = 4
+else:
+    c = 6
+
+print(c)
+
+# 파이썬에서는 지역변수, 전역변수 구분이 없는 것 같다.
+# if문의 변수값도 바깥에서 잘 적용된다.

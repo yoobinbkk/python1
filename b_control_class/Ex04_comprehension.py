@@ -34,15 +34,62 @@ print(alist)
 alist = list(range(1,7))
 print(alist)
 
+print(list(range(1,7)))
+
 
 #------------------------------------------------
 # 리스트 컨프리핸션
 
+blist = [n for n in range(1,7)]
+print(blist)
+
+blist = [n**2 for n in range(1,7)]
+print(blist)
+
+blist = [n**2 for n in range(1,7) if n%2==1]
+print(blist)
+
+# 컴프리핸션 아닌 코드를 컨프리핸션으로 변경
+clist= []
+for r in range(1,4):
+    for c in range(1,3):
+        clist.append((r,c))
+print(clist)
+
+dlist = [ (r,c) for r in range(1,4) for c in range(1,3)]
+print(dlist)
+
+zlist = [ [r for r in range(1,4)] for c in range(1,3)]
+print(zlist)
+
+ylist = []
+for c in range(1,3):    # 1,2
+    for r in range(1, 4): # 1,2,3
+        ylist.append((r,c))
+print(ylist)
+
+print([ (r,c) for c in range(1,3) for r in range(1,4) ])
+
+
+data = (1,2,3,2,1,4,5)
+alist = [ n for n in data]
+print(alist)
+
+bset = {n for n in data}
+print(bset)
 
 #-------------------------------------------
 # 딕셔러니 컨프리핸션
 
+data = (2,3,4)
+adic = {n : n**2 for n in data}
+print(adic)
 
+word = 'LOVE LOL'
+wcnt1 = {letter : word.count(letter) for letter in word}
+wcnt2 = {letter : word.count(letter) for letter in set(word)}
+print(wcnt1)
+print(wcnt2)
 
 #------------------------------------------------
 # 셋 컨프리핸션
@@ -52,18 +99,19 @@ print(alist)
 
 
 
-'''
+
 #------------------------------------------------
 # 프로젝트할 때 팀구호
-우리의결의= """취하고싶으면달려라
+우리의결의= """취업하고싶으면달려라
              맡은업무는반드시마치자
              노력없는성과는없다
              구글신과함께공부하자"""
 
 result = [ j[i*2] for i, j in enumerate(우리의결의.splitlines())]
 print(result)
-'''
 
+print(우리의결의.splitlines())
+#
 
 
 

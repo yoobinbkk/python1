@@ -9,11 +9,42 @@ def case2():
 def case3():
     print('case-3')
 
+f = { 'a1' : case1,
+      'a2' : case2,
+      'a3' : case3 }
+print(f['a2'])
+f['a2']()
 
+byunsu = 'a3'
+f[byunsu]()
 
 #---------------------------------------
 # 글로벌 변수와 지역변수
+# (1)
+# temp = '글로벌'
+# def func():
+#     print('1>', temp)
+# func()
+# print('2>', temp)
 
+# (2)
+temp = '글로벌'
+def func():
+    # print('0>', temp) # 값을 지정하지 않아서 컴파일 에러
+    temp = '지역'
+    print('1>', temp)   # 지역
+func()
+print('2>', temp)       # 전역
+
+
+# (3)
+temp = '글로벌'
+def func():
+    global temp
+    temp = '전역'
+    print('1>', temp)   # 지역
+func()
+print('2>', temp)       # 전역
 
 
 '''
@@ -27,7 +58,13 @@ def case3():
     종종 사용됨
 '''
 
+# 일반함수
+def f(x, y):
+    return x * y
+print( f(3, 2) )
 
+f = lambda x, y : x*y
+print( f(3, 2) )
 
 #-----------------------------------------------------------
 """  맵리듀스
@@ -42,7 +79,35 @@ def case3():
     파이썬 2.x에서는 많이 사용하던 함수이지만, 최근 문법의 복잡성으로 권장하지 않는 추세란다.
 """
 
+def calc(x):
+    return x*2
+data = [1,2,3,4,5]
+res = list(map(calc, data))
+print(res)
 
+# 함수를 각각 리스트 요소에 적용할 수 있다.
 
+# reduce() 구경만
+from functools import reduce
+def f(x,y):
+    return x*y
+data = [1,2,3,4,5]
+print(reduce(f, data))
 
+"""
+[ 연습문제 ]
+
+- 리스트를 인자로 받아 짝수만 갖는 리스트 반환하는 함수 ( 함수명 : even_filter )
+    [ 실행 ]
+        print(even_filter([1, 2, 4, 5, 8, 9, 10]))
+
+- 주어진 수가 소수인지 아닌지 판단하는 함수 ( 함수명 : is_prime_number )
+    [ 실행 ]
+        print(is_prime_number(60))
+        print(is_prime_number(61))
+
+- 주어진 문자열에서 모음의 개수를 출력하는 함수 ( 함수명 : count_vowel )
+    [ 실행 ]
+        print(count_vowel("pythonian"))
+"""
 
