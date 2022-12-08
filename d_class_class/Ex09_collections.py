@@ -96,6 +96,7 @@ print(list(c.elements())) # elements 에서 ctrl + Q로 도움말 보면
 #-------------------------------------------------
 # (5) namedtuple : 튜플의 형태로 데이터 구조체를 저장하는 방법
 
+'''
 from collections import namedtuple
 
 MyPoint=namedtuple('MyPoint',['x','y'])
@@ -103,4 +104,4 @@ p = MyPoint(100, 200)
 print(p)
 print(p.x, p.y)
 print(p.x + p.y)
-
+'''

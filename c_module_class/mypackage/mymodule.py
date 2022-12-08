@@ -17,11 +17,16 @@
         ` 사용자 정의 모듈 : 개발자가 직접 정의한 모듈
 """
 from random import choice
+# import random
 
 def get_weather():
     today = ['맑음','비','눈','폭우','돌풍','따뜻']
     return choice(today)
 
 def get_date():
-    today = ['월','화','수','목','금','토','일ㄴ']
+    today = ['월','화','수','목','금','토','일']
     return choice(today)
+
+if __name__ == '__main__':
+    print(get_weather())
+    print(get_date())
